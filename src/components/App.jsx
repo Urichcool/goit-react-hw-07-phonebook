@@ -6,7 +6,7 @@ import {
 } from './App,styled';
 import { AppAddContactsForm } from './AppAddContactsForm';
 import AppContactsList from './AppContactsList';
-import{ThreeDots} from  'react-loader-spinner'
+import { ThreeDots } from 'react-loader-spinner';
 import { AppContactsFilterInput } from './AppContactsFilterInput';
 import { useSelector, useDispatch } from 'react-redux';
 import { getError, getIsLoading, getContacts } from 'redux/contactsSlice';
@@ -18,12 +18,11 @@ export const App = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
-  const contacts = useSelector(getContacts)
-
+  const contacts = useSelector(getContacts);
 
   useEffect(() => {
-  dispatch(fetchContacts())
-}, [dispatch])
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <ContactsContainer>

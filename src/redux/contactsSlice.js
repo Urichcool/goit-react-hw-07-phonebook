@@ -12,9 +12,9 @@ const handleRejected = (state, action) => {
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
-  items: [],
-  isLoading: false,
-  error: null,
+    items: [],
+    isLoading: false,
+    error: null,
   },
   extraReducers: {
     [fetchContacts.pending]: handlePending,
@@ -36,18 +36,16 @@ const contactsSlice = createSlice({
     [deleteContact.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      const index = state.items.findIndex(contact => contact.id === action.payload);
+      const index = state.items.findIndex(
+        contact => contact.id === action.payload
+      );
       state.items.splice(index, 1);
     },
-  }
+  },
 });
-
 
 export const contactsReducer = contactsSlice.reducer;
 
 export const getContacts = state => state.contacts.items;
 export const getIsLoading = state => state.contacts.isLoading;
 export const getError = state => state.contacts.error;
-
-
-
