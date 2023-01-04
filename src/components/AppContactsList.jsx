@@ -14,8 +14,8 @@ const AppContactsList = () => {
         .filter(contact =>
           contact.name.toLowerCase().includes(filter.toLowerCase().trim())
         )
-        .map(({ name, id, number }) => (
-          <AppContactsItem name={name} key={id} number={number} id={id} />
+        .map(({ name, id, phone }) => (
+          <AppContactsItem name={name} key={id} phone={phone} id={id} />
         ))}
     </ContactsList>
   );

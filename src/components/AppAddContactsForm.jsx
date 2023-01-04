@@ -26,7 +26,7 @@ export const AppAddContactsForm = () => {
       addContact({
         name: name,
         id: nanoid(),
-        number: number,
+        phone: number,
       })
     );
     e.currentTarget.reset();
